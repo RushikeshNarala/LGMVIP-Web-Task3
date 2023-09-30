@@ -1,0 +1,98 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .App{
+     box-sizing: border-box;
+  }
+  
+  .App h1{
+    text-align: center;
+    font-size: 50px;
+    padding: 10px;
+    margin: 3px;
+    font-weight: 900;
+  }
+  .App h2{
+    text-align: center;
+    background-color: rgb(26, 163, 122);
+    padding: 6px;
+    color: white;
+  }
+  
+  .input-container{
+    display: flex;
+    justify-content:space-around;
+    align-items:flex-start;
+    margin: 50px;
+  
+  }
+  
+  .form{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 150px 0px 0px;
+    font-size: 18px;
+    border-right: 2px solid rgb(66, 158, 201);
+  }
+  
+  h3{
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  
+  input{
+    font-size: 15px;
+    padding: 4px;
+    margin: 12px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+  .ininput-text{
+  
+    background-color: lightgray;
+    
+  }
+  
+  .input-text{
+    margin: 3px 0 ;
+    border: 1px solid black;
+    font-weight: 600;
+    font-size: 18px;
+    width: 400px;
+    padding: 0 0 0 10px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+  }
+  
+  button{
+    font-size: 15px;
+    padding: 10px;
+    margin: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+  }
+  
+  .enroll{
+    background-color: rgb(192, 118, 7);
+    margin: 0 5px;
+    
+  }
+  
+  .table{
+    width: 500%;
+    padding: 10px;
+    background-color: aqua;
+    margin: 10px;
+    text-align: center;
+  }
+  .out-display{
+    display: flex;
+  }
+   
