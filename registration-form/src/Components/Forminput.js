@@ -9,16 +9,6 @@ export default function Forminput() {
     // state object which is holds the student properties
     const [input, setinput] = useState({ name: '', mail: '', website: '', link: '', gender: '', skills: [] });
 
-    // function handleChange(e) {
-    //     if (e.target.checked) {
-    //         setAllChecked([...allchecked, e.target.value]);
-    //         setinput({...input}, [e.target.name]: e.target.value)
-    //     } else {
-    //         setAllChecked(allchecked.filter((item) => item !== e.target.value));
-    //     }
-    // }
-
-
     const changeHandle = e => {
         if (e.target.name === 'skills') {
             let data = input.skills.push(e.target.value);
