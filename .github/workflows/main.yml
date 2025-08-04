@@ -1,0 +1,23 @@
+name: Build and Push React App to Docker Hub
+
+on:
+  push:
+    branches:
+      - main  # Update this if your main branch has a different name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Build Docker Image
+        run: docker build -t rushikanna/registration-form:latest .
+
+      - name: Push Docker Image
+        run: docker push rushikanna/registration-form:latest
