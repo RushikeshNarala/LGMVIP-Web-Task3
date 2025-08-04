@@ -1,27 +1,17 @@
-name: ci
+# Stage 1: Build the React app
+FROM node:18 AS build
 
-on:
-  push:
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
 
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      -
-        name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          tags: user/app:latest
+# Stage 2: Serve using Nginx
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Expose port
+EXPOSE 5000
+
+CMD ["nginx", "-g", "daemon off;"]
